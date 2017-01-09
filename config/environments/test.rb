@@ -7,6 +7,19 @@ Rails.application.configure do
   # and recreated between test runs. Don't rely on the data there!
   config.cache_classes = true
 
+  config.action_mailer.delivery_method = :smtp
+
+
+  config.action_mailer.smtp_settings = {
+address: "smtp.gmail.com",
+port: 587,
+domain: "google.com.in",
+authentication: "plain",
+user_name: "khajamainoddin90@gmail.com",
+password: "astra455!",
+enable_starttls_auto: true
+}
+
   # Do not eager load code on boot. This avoids loading your whole application
   # just for the purpose of running a single test. If you are using a tool that
   # preloads Rails for running tests, you may have to set it to true.

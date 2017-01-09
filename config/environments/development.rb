@@ -6,6 +6,20 @@ Rails.application.configure do
   # since you don't have to restart the web server when you make code changes.
   config.cache_classes = false
 
+  config.action_mailer.delivery_method = :test
+
+  config.action_mailer.delivery_method = :smtp
+
+  config.action_mailer.smtp_settings = {
+   
+   address: "smtp.gmail.com",
+   port: 587,
+   domain: "google.com.in",
+   authentication: "plain",
+   user_name: "khajamainoddin90@gmail.com",
+   password: "astra455!",
+   enable_starttls_auto: true
+ }
   # Do not eager load code on boot.
   config.eager_load = false
 
@@ -25,6 +39,8 @@ Rails.application.configure do
 
     config.cache_store = :null_store
   end
+
+  
 
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
